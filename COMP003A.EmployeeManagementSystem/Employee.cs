@@ -10,21 +10,21 @@ namespace COMP003A.EmployeeManagementSystem
     internal class Employee
     {
         //Private Fields
-        private string _employeeId = "001";
-        private string _firstName = "Johnathan";
-        private string _middleName = "Rodrigo";
-        private string _lastName = "Cruz";
-        private double _salary = 0;
+        private string _employeeId = "2560";
+        private string _firstName;
+        private string _middleName;
+        private string _lastName;
+        private double _salary;
 
         //Properties
         public string EmployeeId
         {
-            get { return EmployeeId; }
+            get { return _employeeId; }
         }
 
         public string FirstName
         {
-            get { return FirstName; }
+            get { return _firstName; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -36,7 +36,7 @@ namespace COMP003A.EmployeeManagementSystem
         }
         public string LastName
         {
-            get { return LastName; }
+            get { return _lastName; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
@@ -48,7 +48,7 @@ namespace COMP003A.EmployeeManagementSystem
         }
         public string MiddleName
         {
-            get { return MiddleName; }
+            get { return _middleName; }
             set { _middleName = value; }
         }
 
@@ -71,9 +71,10 @@ namespace COMP003A.EmployeeManagementSystem
             _lastName = LastName;
             _salary = Salary;
         }
+        //prints full name
         public void PrintFullName()
         {
-            Console.WriteLine(FirstName , MiddleName, LastName);
+            Console.WriteLine($"{FirstName} {MiddleName} {LastName}");
         }
         public void DisplayEmployeeInfo()
         {

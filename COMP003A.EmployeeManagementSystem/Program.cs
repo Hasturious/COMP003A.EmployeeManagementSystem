@@ -9,7 +9,18 @@ namespace COMP003A.EmployeeManagementSystem
     {
         static void Main(string[] args)
         {
-            
+            //creating an instance of the employee class
+            Employee myEmployee = new Employee("Alpha", "Bravo", "Charlie", 5000);
+            //creating an instance of the departments
+            HRDepartment HR = new HRDepartment();
+            ITDepartment IT = new ITDepartment();
+
+            Console.WriteLine("Employee Details");
+            myEmployee.DisplayEmployeeInfo();
+            /*
+            Console.WriteLine("HR Department Details:");
+            HRDepartment.DisplayDerpartmentInfo()
+            */
         }
     }
 }
