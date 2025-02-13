@@ -9,16 +9,29 @@ namespace COMP003A.EmployeeManagementSystem
     {
         static void Main(string[] args)
         {
+            //getting user inputs
+            Console.Write("Enter ID: ");
+            string _employeeId = Console.ReadLine();
+            Console.Write("Enter First Name: ");
+            string _firstName = Console.ReadLine();
+            Console.Write("Enter Middle Name: ");
+            string _middleName = Console.ReadLine();
+            Console.Write("Enter Last Name: ");
+            string _lastName = Console.ReadLine();
+            Console.Write("Enter Salary: ");
+            double _salary = int.Parse(Console.ReadLine());
+            Console.WriteLine(_salary);
+            
             //creating an instance of the employee class and validating it
-            try
-            {
-                Employee myEmployee = new Employee("Alpha", "Bravo", "Charlie", -5000);
-                myEmployee.DisplayEmployeeInfo();
-            }
-            catch (ArgumentException ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
+                try
+                {
+                    Employee myEmployee = new Employee(_employeeId, _firstName, _middleName, _lastName, _salary);
+                    myEmployee.DisplayEmployeeInfo();
+                }
+                catch (ArgumentException ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
             //creating an instance of the departments
             HRDepartment HR = new HRDepartment();
             ITDepartment IT = new ITDepartment();
@@ -39,6 +52,7 @@ namespace COMP003A.EmployeeManagementSystem
             IT.DisplayDepartmentInfo();
             IT.Operate();
             Console.WriteLine(IT.GetDepartmentDetails());
+            
         }
     }
 }

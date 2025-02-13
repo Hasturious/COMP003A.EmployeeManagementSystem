@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
 namespace COMP003A.EmployeeManagementSystem
 {
     internal class Employee
     {
         //Private Fields
-        private string _employeeId = "2560";
+        private string _employeeId;
         private string _firstName;
         private string _middleName;
         private string _lastName;
@@ -26,17 +25,13 @@ namespace COMP003A.EmployeeManagementSystem
         {
             get { return _firstName; }
             set
-            {
-                _firstName = value;
-            }
+            { _firstName = value; }
         }
         public string LastName
         {
             get { return _lastName; }
             set
-            {
-                _lastName = value;
-            }
+            {  _lastName = value; }
         }
         public string MiddleName
         {
@@ -47,12 +42,9 @@ namespace COMP003A.EmployeeManagementSystem
         public double Salary
         {
             get { return _salary; }
-            set
-            {
-                _salary = value;
-            }
+            set { _salary = value; }
         }
-        public Employee(string FirstName, string MiddleName, string LastName, double Salary)
+        public Employee(string EmployeeId, string FirstName, string MiddleName, string LastName, double Salary)
         {
             if (string.IsNullOrWhiteSpace(FirstName))
             {
@@ -67,6 +59,7 @@ namespace COMP003A.EmployeeManagementSystem
                 throw new ArgumentException("Salary cannot be less than 0. Please enter a valid value.");
             }
 
+            _employeeId = EmployeeId;
             _firstName = FirstName;
             _middleName = MiddleName;
             _lastName = LastName;
