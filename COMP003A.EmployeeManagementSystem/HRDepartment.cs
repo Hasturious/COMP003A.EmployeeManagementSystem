@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 //Handles employee relations and recruitment
 namespace COMP003A.EmployeeManagementSystem
 {
-    internal class HRDepartment
+    internal class HRDepartment : Department
     {
-
+        public override void GetDepartmentDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

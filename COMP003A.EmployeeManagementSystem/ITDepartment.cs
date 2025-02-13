@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 //Manages technical resources and infrastructure
 namespace COMP003A.EmployeeManagementSystem
 {
-    internal class ITDepartment
+    internal class ITDepartment : Department
     {
+        public override void GetDepartmentDetails()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
