@@ -27,10 +27,6 @@ namespace COMP003A.EmployeeManagementSystem
             get { return _firstName; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Please Enter a Name");
-                }
                 _firstName = value;
             }
         }
@@ -39,10 +35,6 @@ namespace COMP003A.EmployeeManagementSystem
             get { return _lastName; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Please Enter a Name");
-                }
                 _lastName = value;
             }
         }
@@ -57,16 +49,25 @@ namespace COMP003A.EmployeeManagementSystem
             get { return _salary; }
             set
             {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Please Enter a Valid Salary");
-                }
                 _salary = value;
             }
         }
         public Employee(string FirstName, string MiddleName, string LastName, double Salary)
         {
-           _firstName = FirstName;
+            if (string.IsNullOrWhiteSpace(FirstName))
+            {
+                throw new ArgumentException("First name cannot be empty. Please try again.");
+            }
+            if (string.IsNullOrWhiteSpace(LastName))
+            {
+                throw new ArgumentException("Last name cannot be empty. Please try again.");
+            }
+            if (Salary < 0)
+            {
+                throw new ArgumentException("Salary cannot be less than 0. Please enter a valid value.");
+            }
+
+            _firstName = FirstName;
             _middleName = MiddleName;
             _lastName = LastName;
             _salary = Salary;
