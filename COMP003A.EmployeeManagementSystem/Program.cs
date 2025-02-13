@@ -14,13 +14,23 @@ namespace COMP003A.EmployeeManagementSystem
             //creating an instance of the departments
             HRDepartment HR = new HRDepartment();
             ITDepartment IT = new ITDepartment();
-
+            //Employee info
             Console.WriteLine("Employee Details");
             myEmployee.DisplayEmployeeInfo();
-            /*
-            Console.WriteLine("HR Department Details:");
-            HRDepartment.DisplayDerpartmentInfo()
-            */
+
+            Console.WriteLine(); //Spacing for readability in the console
+
+            //HR department
+            HR.DisplayDepartmentInfo();
+            HR.Operate();
+            Console.WriteLine(HR.GetDepartmentDetails());
+            
+            Console.WriteLine(); //Spacing for readability in the console
+
+            //IT department
+            IT.DisplayDepartmentInfo();
+            IT.Operate();
+            Console.WriteLine(IT.GetDepartmentDetails());
         }
     }
 }
