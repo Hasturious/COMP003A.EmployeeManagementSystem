@@ -9,7 +9,7 @@ namespace COMP003A.EmployeeManagementSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            PrintFullName();
         }
     }
 }
