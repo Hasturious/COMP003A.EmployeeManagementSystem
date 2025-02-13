@@ -8,9 +8,13 @@ namespace COMP003A.EmployeeManagementSystem
 {
     internal class ITDepartment : Department
     {
-        public override void GetDepartmentDetails()
+        //base class constructor sets department name
+        public ITDepartment() : base("IT Department") {}
+
+        //overides ther abstract method to IT
+        public override string GetDepartmentDetails()
         {
-            throw new NotImplementedException();
+            return "Manages technical resources and infrastructure";
         }
     }
 }

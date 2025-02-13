@@ -8,9 +8,11 @@ namespace COMP003A.EmployeeManagementSystem
 {
     internal class HRDepartment : Department
     {
-        public override void GetDepartmentDetails()
+        public HRDepartment() : base("HR Department") {}
+
+        public override string GetDepartmentDetails()
         {
-            throw new NotImplementedException();
+            return "Handles employee relations and recruitment";
         }
     }
 }

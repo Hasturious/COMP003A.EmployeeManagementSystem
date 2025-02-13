@@ -8,13 +8,19 @@ namespace COMP003A.EmployeeManagementSystem
 {
     abstract class Department
     {
+        //property
         public string DepartmentName {  get; set; }
-
-        public abstract void GetDepartmentDetails();
-
+        //constructor
+        public Department(string departmentName)
+        {
+            DepartmentName = departmentName;
+        }
+        //abstract method
+        public abstract string GetDepartmentDetails();
+        //concrete method
         public void DisplayDepartmentInfo()
         {
-            Console.WriteLine(DepartmentName);
+            Console.WriteLine($"Department Name: {DepartmentName}");
         }
     }
 }
