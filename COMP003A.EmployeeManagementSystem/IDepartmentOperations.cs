@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP003A.EmployeeManagementSystem
 {
-    internal interface IDepartmentOperations
+    interface IDepartmentOperations
     {
         void Operate();
     }
