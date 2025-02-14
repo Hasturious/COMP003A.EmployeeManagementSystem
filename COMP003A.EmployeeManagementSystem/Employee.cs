@@ -74,6 +74,10 @@ namespace COMP003A.EmployeeManagementSystem
         /// <exception cref="ArgumentException"></exception>
         public Employee(string EmployeeId, string FirstName, string MiddleName, string LastName, double Salary)
         {
+            if (string.IsNullOrWhiteSpace(EmployeeId))
+            {
+                throw new ArgumentException("ID cannot be empty. Please try again.");
+            }
             if (string.IsNullOrWhiteSpace(FirstName))
             {
                 throw new ArgumentException("First name cannot be empty. Please try again.");
@@ -82,7 +86,7 @@ namespace COMP003A.EmployeeManagementSystem
             {
                 throw new ArgumentException("Last name cannot be empty. Please try again.");
             }
-            if (Salary < 0)
+            if (Salary < 0 || double.IsNaN(Salary))
             {
                 throw new ArgumentException("Salary cannot be less than 0. Please enter a valid value.");
             }
