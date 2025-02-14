@@ -19,8 +19,23 @@ namespace COMP003A.EmployeeManagementSystem
             Console.Write("Enter Last Name: ");
             string _lastName = Console.ReadLine();
             Console.Write("Enter Salary: ");
-            double _salary = int.Parse(Console.ReadLine());
-            Console.WriteLine(_salary);
+            try
+            {
+
+            }
+            string salaryInput = Console.ReadLine();
+            double _salary = 0;
+            if (int.TryParse(salaryInput, out int number))
+            {
+               _salary = number;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid salary input. Please enter a valid number.");
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            //Console.WriteLine(_salary);
             
             //creating an instance of the employee class and validating it
                 try

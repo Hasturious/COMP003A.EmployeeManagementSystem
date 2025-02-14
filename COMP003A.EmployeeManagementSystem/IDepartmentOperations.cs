@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace COMP003A.EmployeeManagementSystem
 {
+    /// <summary>
+    /// Calls an operate method from interface
+    /// </summary>
     interface IDepartmentOperations
     {
         void Operate();

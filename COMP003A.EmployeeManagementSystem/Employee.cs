@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 namespace COMP003A.EmployeeManagementSystem
 {
+    /// <summary>
+    /// Defines the Employee class which has mutliple variables deependent on user input
+    /// </summary>
     internal class Employee
     {
         //Private Fields
@@ -16,34 +19,59 @@ namespace COMP003A.EmployeeManagementSystem
         private double _salary;
 
         //Properties
+
+        /// <summary>
+        /// Adds EmployeeID thats read only
+        /// </summary>
         public string EmployeeId
         {
             get { return _employeeId; }
         }
 
+        /// <summary>
+        /// Gets/Sets first name
+        /// </summary>
         public string FirstName
         {
             get { return _firstName; }
             set
             { _firstName = value; }
         }
+        /// <summary>
+        /// Gets/Sets last name
+        /// </summary>
         public string LastName
         {
             get { return _lastName; }
             set
             {  _lastName = value; }
         }
+        /// <summary>
+        /// Gets/Sets middle name
+        /// </summary>
         public string MiddleName
         {
             get { return _middleName; }
             set { _middleName = value; }
         }
 
+        /// <summary>
+        /// Gets/Sets the salary of the employee.
+        /// </summary>
         public double Salary
         {
             get { return _salary; }
             set { _salary = value; }
         }
+        /// <summary>
+        /// Constructs the class with details
+        /// </summary>
+        /// <param name="EmployeeId"></param>
+        /// <param name="FirstName"></param>
+        /// <param name="MiddleName"></param>
+        /// <param name="LastName"></param>
+        /// <param name="Salary"></param>
+        /// <exception cref="ArgumentException"></exception>
         public Employee(string EmployeeId, string FirstName, string MiddleName, string LastName, double Salary)
         {
             if (string.IsNullOrWhiteSpace(FirstName))
@@ -65,15 +93,20 @@ namespace COMP003A.EmployeeManagementSystem
             _lastName = LastName;
             _salary = Salary;
         }
-        //prints full name
+        /// <summary>
+        /// prints full name
+        /// </summary>
         public void PrintFullName()
         {
             Console.WriteLine($"{FirstName} {MiddleName} {LastName}");
         }
+        /// <summary>
+        /// Displays all employee info
+        /// </summary>
         public void DisplayEmployeeInfo()
         {
             PrintFullName();
-            Console.WriteLine($"Salary: {Salary} ID: {EmployeeId}");
+            Console.WriteLine($"Salary: {Salary:F2} ID: {EmployeeId}");
         }
     }
 }
